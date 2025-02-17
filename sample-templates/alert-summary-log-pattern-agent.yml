@@ -82,10 +82,11 @@ workflows:
       - id: create_alert_summary_with_log_pattern_agent
         type: register_agent
         previous_node_inputs:
-          create_alert_summary_with_log_pattern_ml_model_tool: tools
           create_log_pattern_tool: tools
+          create_alert_summary_with_log_pattern_ml_model_tool: tools
         user_inputs:
           parameters: {}
+          tools_order: ['create_log_pattern_tool', 'create_alert_summary_with_log_pattern_ml_model_tool']
           type: flow
           name: Alert Summary With Log Pattern Agent
           description: this is an alert summary with log pattern agent
